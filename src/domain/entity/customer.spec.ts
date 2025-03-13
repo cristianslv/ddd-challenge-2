@@ -7,6 +7,8 @@ import Customer from "./customer";
 describe("Customer unit tests", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    EventDispatcher.getInstance().unregisterAll("CustomerCreatedEvent");
+    EventDispatcher.getInstance().unregisterAll("CustomerAddressUpdatedEvent");
   });
 
   it("should throw error when id is empty", () => {
